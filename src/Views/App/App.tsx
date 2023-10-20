@@ -8,6 +8,9 @@ function App() {
     const sum = (parseFloat(String(balance)) + parseFloat(String(val))).toFixed(2)
     setBalance(sum)
   }
+  const returnCoins = () => {
+    setBalance('0')
+  }
 
   return (
     <Container>
@@ -35,7 +38,9 @@ function App() {
         </Coins>
       </CoinsContainer>
       <Balance>$ {balance}</Balance>
-      <Return>Return Coin</Return>
+      <Return type='button' onClick={returnCoins}>
+        Return Coin
+      </Return>
     </Container>
   )
 }
