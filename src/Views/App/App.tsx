@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Balance, CardContainer, Coins, CoinsContainer, Container, Return, Title } from './styles'
 import Card from '../../Components/Card/Card'
 
 function App() {
+  const [balance, setBalance] = useState('0')
+  const insertCoin = (val: number) => {
+    const sum = (parseFloat(String(balance)) + parseFloat(String(val))).toFixed(2)
+    setBalance(sum)
+  }
+
   return (
     <Container>
       <Title>Vending Machine</Title>
@@ -18,11 +24,17 @@ function App() {
       </CardContainer>
       <CoinsContainer>
         <h3>Insert: </h3>
-        <Coins type='button'>0.05</Coins>
-        <Coins type='button'>0.10</Coins>
-        <Coins type='button'>0.25</Coins>
+        <Coins onClick={() => insertCoin(0.05)} type='button'>
+          0.05
+        </Coins>
+        <Coins onClick={() => insertCoin(0.1)} type='button'>
+          0.10
+        </Coins>
+        <Coins onClick={() => insertCoin(0.25)} type='button'>
+          0.25
+        </Coins>
       </CoinsContainer>
-      <Balance>$ 0.00</Balance>
+      <Balance>$ {balance}</Balance>
       <Return>Return Coin</Return>
     </Container>
   )
