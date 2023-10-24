@@ -10,7 +10,7 @@ export const Container = styled.div`
   border-radius: 20px;
   transition: all 0.5s;
 
-  &:hover {
+  &:hover:not(.disabled) {
     background: #eac2be;
     padding: 10px;
     & img {
@@ -20,6 +20,11 @@ export const Container = styled.div`
 
   & h3 {
     color: #666f88;
+  }
+
+  &.disabled {
+    background: #ccc;
+    cursor: no-drop;
   }
 `
 
