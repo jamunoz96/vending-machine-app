@@ -3,7 +3,7 @@ import { Container, Loader } from './styles'
 
 const Loading: FC = () => {
   return (
-    <Container>
+    <Container role='full-loader'>
       <Loader />
       Preparing you product...
     </Container>

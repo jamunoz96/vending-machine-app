@@ -23,7 +23,7 @@ const Card: FC<ICard> = ({ product, onBuy, currentBalance }) => {
   }
 
   return (
-    <Container onClick={handleBuy} className={disabled || unity <= 0 ? 'disabled' : 'enable'}>
+    <Container role='card-product' onClick={handleBuy} className={disabled || unity <= 0 ? 'disabled' : 'enable'}>
       <h3>{name}</h3>
       <Unity>{unity}</Unity>
       <img width={300} height={300} src={icon_url} alt='machine' />

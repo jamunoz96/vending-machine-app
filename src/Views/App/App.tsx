@@ -40,11 +40,11 @@ function App() {
   }
 
   if (error) {
-    return <p>Failed to fetch</p>
+    return <p role='failed'>Failed to fetch</p>
   }
 
   if (isLoading) {
-    return <p>Loading products...</p>
+    return <p role='loading'>Loading products...</p>
   }
 
   return (
@@ -56,13 +56,13 @@ function App() {
         </CardContainer>
         <CoinsContainer>
           <h3>Insert: </h3>
-          <Coins onClick={() => insertCoin(0.05)} type='button'>
+          <Coins role='insertc-1' onClick={() => insertCoin(0.05)} type='button'>
             0.05
           </Coins>
-          <Coins onClick={() => insertCoin(0.1)} type='button'>
+          <Coins role='insertc-2' onClick={() => insertCoin(0.1)} type='button'>
             0.10
           </Coins>
-          <Coins onClick={() => insertCoin(0.25)} type='button'>
+          <Coins role='insertc-3' onClick={() => insertCoin(0.25)} type='button'>
             0.25
           </Coins>
         </CoinsContainer>
